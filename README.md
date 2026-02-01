@@ -43,3 +43,19 @@ An AI-powered Django web application that rewrites user messages into polite, pr
 git clone https://github.com/Bhaktiprasadmaharana/corporate-politeness-translator.git
 cd corporate-politeness-translator
 ```
+
+---
+
+## 📸 Screenshots
+
+### Home Page
+![Home Page](screenshots/home.png)
+
+### Message Translation Example
+![Translation Example](screenshots/input-output.png)
+
+### Sender Role Selection
+![Sender Role](screenshots/sender-role.png)
+
+### Politeness Level Selection
+![Politeness Level](screenshots/politeness-level.png)
