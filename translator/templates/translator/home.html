@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Corporate Politeness Translator</title>
+    <link rel="stylesheet" href="{% static 'translator/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Corporate Politeness Translator</h1>
+
+        <form method="post">
+            {% csrf_token %}
+
+            <label for="level">Politeness Level</label>
+            <select name="level" id="level">
+                <option value="casual" {% if level == "casual" %}selected{% endif %}>Casual</option>
+                <option value="professional" {% if level == "professional" %}selected{% endif %}>Professional</option>
+                <option value="corporate" {% if level == "corporate" %}selected{% endif %}>Ultra Corporate</option>
+            </select>
+
+            <label for="sender">Sender Role</label>
+            <select name="sender" id="sender">
+              <option value="manager" {% if sender == "manager" %}selected{% endif %}>Manager</option>
+              <option value="team_member" {% if sender == "team_member" %}selected{% endif %}>Team Member</option>
+              <option value="hr" {% if sender == "hr" %}selected{% endif %}>HR</option>
+              <option value="client" {% if sender == "client" %}selected{% endif %}>Client</option>
+              <option value="teacher" {% if sender == "teacher" %}selected{% endif %}>Teacher</option>
+              <option value="friend" {% if sender == "friend" %}selected{% endif %}>Friend</option>
+          </select>
+
+            <textarea
+                name="input_text"
+                placeholder="Enter your message here..."
+                rows="6"
+            >{{ input_text }}</textarea>
+
+            <button type="submit" id="translateBtn">Translate</button>
+        </form>
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
+        {% if output_text %}
+            <div class="output">
+                {{ output_text }}
+            </div>
+        {% endif %}
+    </div>
+
+    <script>
+      const form = document.querySelector("form");
+      const button = document.getElementById("translateBtn");
+
+      if (form && button) {
+        form.addEventListener("submit", () => {
+          button.disabled = true;
+          button.innerText = "Rewriting...";
+        });
+      }
+    </script>
+</body>
+</html>
