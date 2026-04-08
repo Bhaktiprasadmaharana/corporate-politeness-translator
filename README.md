@@ -1,6 +1,6 @@
 # Corporate Politeness Translator
 
-An AI-powered Django web application that rewrites user messages into polite, professional communication using Google Gemini LLM with persona-based sender roles.
+An AI-powered Django web application that rewrites user messages into polite, professional communication using Groq API with persona-based sender roles.
 
 ---
 
@@ -9,7 +9,7 @@ An AI-powered Django web application that rewrites user messages into polite, pr
 - Rewrite casual or blunt messages into professional corporate language
 - Select **Politeness Level** (Casual, Professional, Corporate)
 - Choose **Sender Role** (Manager, Team Member, HR, Client, Teacher, Friend)
-- AI-powered rewriting using **Google Gemini**
+- AI-powered rewriting using **Groq API**
 - Fallback rule-based rewriting when AI quota is exceeded
 - Clean, modern UI built with HTML & CSS
 - Secure handling of API keys using environment variables
